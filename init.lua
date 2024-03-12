@@ -45,4 +45,4 @@ require("lazy").setup({
     }
 })
 
-vim.cmd.colorscheme("tokyonight-storm")
+vim.cmd.colorscheme("tokyonight-night")
