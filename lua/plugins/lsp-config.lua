@@ -21,7 +21,14 @@ return {
 
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' }
+            }
+          }
+        }
       })
       lspconfig.ruff_lsp.setup({
         capabilities = capabilities
@@ -32,12 +39,24 @@ return {
       lspconfig.intelephense.setup({
         capabilities = capabilities
       })
-      -- lspconfig.pyright.setup({})
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "off"
+            }
+          }
+        }
+      })
 
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {})
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {})
+
     end
   },
 }
