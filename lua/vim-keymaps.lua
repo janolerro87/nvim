@@ -12,6 +12,9 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("i", "<C-c>", "<Esc>")
 keymap.set("n", "Q", "<nop>")
 
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 

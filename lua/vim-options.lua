@@ -37,7 +37,7 @@ vim.opt.listchars = "eol:$,tab:▸␣,trail:~,extends:>,precedes:<"
 -- vim.opt.listchars = 'eol:$,tab:>-,trail:~,extends:>,precedes:<'
 
 vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 vim.opt.termguicolors = true
 vim.opt.winblend = 0
@@ -66,3 +66,6 @@ vim.cmd([[
 ]])
 
 vim.opt.clipboard:prepend({ "unnamed", "unnamedplus" })
+
+vim.g.python3_host_prog = "/usr/bin/python"
+vim.g.loaded_perl_provider = 0
