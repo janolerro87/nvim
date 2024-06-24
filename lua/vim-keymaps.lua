@@ -7,8 +7,16 @@ keymap.set("n", "<c-h>", ":wincmd h<Return>")
 keymap.set("n", "<c-l>", ":wincmd l<Return>")
 keymap.set("n", "<leader>h", ":nohlsearch<Return>")
 
+-- Move Lines
+keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 keymap.set("i", "<C-c>", "<Esc>")
 keymap.set("n", "Q", "<nop>")
 
