@@ -49,6 +49,26 @@ return {
           }
         }
       })
+      local pid = vim.fn.getpid()
+      local omnisharp_bin = "/usr/bin/OmniSharp"
+
+      lspconfig.omnisharp.setup({
+        capabilities = capabilities,
+        cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+        settings = {
+            FormatingOptions = {
+                EnableEditorConfig = true
+            },
+            MsBuild = {},
+            RoslynExtensionOptions = {},
+            Sdk = {
+                IncludePreresleases = true
+            }
+        }
+      })
+      -- lspconfig.csharp_ls.setup({
+      --   capabilities = capabilities
+      -- })
 
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
