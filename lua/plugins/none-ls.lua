@@ -5,6 +5,12 @@ return {
   },
   config = function()
     local null_ls = require("null-ls")
+    local php_extra_args = {
+        "--standard=PSR12",
+        -- "--exclude=PEAR.Commenting.FunctionComment.Missing",
+        "--exclude=Generic.Files.LineLength",
+        "--exclude=Generic.Files.LineLength.TooLong",
+    }
 
     null_ls.setup({
       sources = {
@@ -17,9 +23,13 @@ return {
 
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.csharpier,
-        -- null_ls.builtins.diagnostics.pyright,
-        -- null_ls.builtins.diagnostics.eslint,
-        -- null_ls.builtins.completion.spell,
+        null_ls.builtins.formatting.phpcbf.with({
+            extra_args = php_extra_args
+        }),
+        null_ls.builtins.diagnostics.phpcs.with({
+            extra_args = php_extra_args
+        }),
+        null_ls.builtins.completion.spell,
       },
     })
 
