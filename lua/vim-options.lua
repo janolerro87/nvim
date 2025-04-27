@@ -36,8 +36,12 @@ vim.opt.list = true
 vim.opt.listchars = "eol:$,tab:▸␣,trail:~,extends:>,precedes:<"
 -- vim.opt.listchars = 'eol:$,tab:>-,trail:~,extends:>,precedes:<'
 
+vim.opt.foldenable = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+-- vim.opt.foldcolumn = "0"
+vim.opt.fillchars:append({ fold = " " })
 
 vim.opt.termguicolors = true
 vim.opt.winblend = 0
