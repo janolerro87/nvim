@@ -31,6 +31,7 @@ return {
             kind = "",
             find = "No information available",
           },
+          view = "split",
           opts = { skip = true },
         }
       },

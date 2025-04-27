@@ -30,7 +30,7 @@ return {
           }
         }
       })
-      lspconfig.ruff_lsp.setup({
+      lspconfig.ruff.setup({
         capabilities = capabilities
       })
       lspconfig.gopls.setup({
@@ -49,6 +49,17 @@ return {
           }
         }
       })
+
+      lspconfig.emmet_language_server.setup({
+        capabilities = capabilities,
+        filetypes = { "css", "html", "sass", "scss" }
+      })
+
+      lspconfig.lemminx.setup({
+        capabilities = capabilities,
+        filetypes = { "xml", "xsd", "xsl", "xslt", "svg" }
+      })
+
       local pid = vim.fn.getpid()
       local omnisharp_bin = "/usr/bin/OmniSharp"
 
