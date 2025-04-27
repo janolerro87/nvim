@@ -59,3 +59,6 @@ keymap.set('n', ']<Space>', 'm`o<Esc>``')
 -- keymap.set("n", "<C-j>", function ()
 --   vim.diagnostic.goto_next()
 -- end, opts)
+
+keymap.set("n", "<leader>l", ":Lazy<Return>")
+keymap.set("n", "<leader>m", ":Mason<Return>")
