@@ -5,13 +5,20 @@ return {
         "kristijanhusak/vim-dadbod-completion",
         "tpope/vim-dotenv",
     },
+    cmd = {
+        "DBUI",
+        "DBUIToggle",
+        "DBUIAddConnection",
+        "DBUIFindBuffer",
+    },
     keys = { { "<leader>db", ":tab DBUI<Return>", desc = "Open Database client" } },
     init = function()
         vim.g.db_ui_use_nerd_fonts = 1
         vim.g.db_ui_show_database_icon = 1
-        vim.g.db_ui_force_echo_notifications = 1
+        -- vim.g.db_ui_force_echo_notifications = 1
         vim.g.db_ui_win_position = "left"
         vim.g.db_ui_winwidth = 80
+        -- vim.g.db_ui_auto_execute_table_helpers = 1
 
         vim.g.db_ui_table_helpers = {
             mysql = {
