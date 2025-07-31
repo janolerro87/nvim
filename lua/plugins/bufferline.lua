@@ -26,7 +26,7 @@ return {
       }
     }
 
-    vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", {})
-    vim.keymap.set("n", "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", {})
+    -- vim.keymap.set("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", {})
+    -- vim.keymap.set("n", "<s-tab>", "<cmd>BufferLineCyclePrev<cr>", {})
   end
 }
